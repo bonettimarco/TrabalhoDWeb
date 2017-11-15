@@ -1,0 +1,11 @@
+
+CREATE TABLE `sitevendas`.`produto` (idProduto int, idCategoria int, nome varchar(30), descricao varchar(60), valor double
+);
+CREATE TABLE `sitevendas`.`item` (idPedido int, idProduto int, quantidade int, precoSubTotal double
+);
+CREATE TABLE `sitevendas`.`compras` (id int, idCliente int, itensPedido item[], total double, processado boolean, idFuncionario int
+);
+CREATE TABLE `sitevendas`.`administrador` (email varchar(30), senha varchar(8), admin boolean, session int
+);
+CREATE TABLE `sitevendas`.`clientes` (email varchar(30), cookie varchar(100), nome varchar(60), endereco varchar(50), bairro varchar(20), cidade varchar(20), cep varchar(10), estado varchar(2), referencias varchar(100), CPF varchar(20), RI varchar(20), telFixo varchar(20), celular varchar(20), cartao varchar(20), bandeira varchar(12), admin boolean
+);

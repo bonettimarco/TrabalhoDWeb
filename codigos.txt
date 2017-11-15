@@ -1,0 +1,35 @@
+LOJA DW
+Área Restrita
+
+Eletrodomésticos  Informática  Eletroportáteis  Smartphones
+campo para digitar Pesquisar
+
+dados do produto - preco COMPRAR
+
+
+aO CLICAR NO CARRINHO
+LOJA DW
+Minhas Compras
+Lista de produtos com preço e link REMOVER
+ABAIXO
+tOTAL DA cOMPRA r$ NHOLNHO
+finalizar a compra
+
+retornar às comprasz
+
+    //HttpSession session= request.getSession();
+    //session.setAttribute("NomeUsuarioLogado", "admin");
+    //session.setAttribute("logado", "ok");
+    //
+    //Object logado = session.getAttribute("logado");
+    //String aux = (String) logado;
+    //if (aux.equals("ok"))...
+    
+    //
+    //Coockie coockieNome = new Coockie("Nome", nome_user);
+    //coockieNome.setMaxAge(60*60*24*7);uma semana
+    //response.addCoockie(coockie);
+    //
+    //Coockie[] coockies = request.getCoockies();
+    //for(int i=0; i<coockies.length; i++){
+    //if(coockies[i].getName().equals("Nome")){....

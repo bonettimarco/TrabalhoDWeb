@@ -1,0 +1,278 @@
+
+<!-- Navigation -->
+
+    <nav id="mainNav" class="navbar navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <%= link_to image_tag("logo-nova.png", width: 300, height: 38 ), root_path %>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown-submenu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            VLOGOSFERA 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Quem somos", sobre_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Nossas Intenções", intencoes_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Mostre-nos seu trabalho", new_user_work_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Agenciados", agenciados_path %> </li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Equipe", equipe_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Anuncie", anuncie_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Redes Sociais", social_media_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Contato", contato_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Níveis e Pontuações", niveis_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Ranking Geral", ranking_path %></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            RADIO
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dark-bg">
+                            <li><%= link_to "Pedido", pedidos_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Horários", horarios_path(0) %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Programas", programas_path %></li>
+                        </ul>
+                    </li>                           
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            NOTÍCIAS 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dark-bg">
+                      <% if user_signed_in? %>
+                            <li><%= link_to "Poste sua notícia", new_user_note_path %></li>
+                            <li class="divider"></li>
+                      <% end %>
+                            <li><%= link_to "Últimas 24 horas", noticiaulti_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Eventos", noticiaeven_path %></li>
+                            <li class="divider"></li>
+                             <li><%= link_to "Youtubers", noticiayout_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Global", noticiaglob_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Fã Clubes Oficiais", noticiaclub_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Rádio", noticiaradio_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Sites", noticiasite_path %></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          FÓRUM 
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dark-bg">
+                            <% if user_signed_in? %>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                  Editar o Fórum 
+                                  <b class="caret"></b>
+                                  </a>
+                          <ul class="dropdown">
+                            <li class="divider"></li>
+                            <li><%= link_to "Criar novo tópico", new_post_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Meus tópicos", lista_posts_path(current_user) %></li>
+                            <li class="divider"></li>
+                            </ul>
+                            <% end %>
+                            <li><%= link_to "Tópicos recentes", forumrece_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Top 10 da semana", forumtop_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Fã Clubes Oficiais", forumclub_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Todos os tópicos", forum_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Regras do GoogleAdsense", adsense_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Regras do Fórum", regras_path %></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          VÍDEOS 
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dark-bg">
+                            <% if user_signed_in? %>
+                                <li><%= link_to "Divulgue seu vídeo", new_user_video_path %> </li>
+                                <li class="divider"></li>
+                            <% end %>
+                            <li><%= link_to "Usuários Vlogosfera", videouser_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Agenciados Vlogosfera", videoagen_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Fã Clubes Oficiais", videoclub_path %></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          PARCEIROS 
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dark-bg">
+                            <li><%= link_to "Nossos Parceiros", parceirao_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Seja um parceiro", new_parceiro_path %></li>
+                        </ul>
+                    </li>                    <li class="dropdown">
+                      <% if user_signed_in? %>
+                        <% tempo = User.find(current_user.id) %>
+                        <% if (DateTime.now.to_i - 3600  < tempo.controlatempo.to_i)%>
+                        <% else %>
+                          <% if DateTime.now.to_i - 3900 < tempo.controlatempo.to_i %>
+                            <% tempo.points=tempo.points+200 %>
+                            <% tempo.semanapoints=tempo.semanapoints+200 %>
+                            <% flash[:alert] = "Você ganhou 200 pontos por estar há uma hora no site." %>
+                          <% end %>
+                          <% tempo.controlatempo=DateTime.now %>
+                          <% tempo.save %>
+                        <% end %>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          Olá
+                          <b class="caret"></b>
+                          <br> <%= current_user.name %>
+                        </a>
+                        <ul class="dropdown-menu dark-bg">
+                              <li><%= link_to "Perfil", user_path(current_user) %></li>
+                              <li class="divider"></li>
+                              <% if current_user.faclube %>
+                                <% lideres = FanclubMember.where(status: 'leader') %>
+                                <% id = lideres.where(user_id: current_user) %>
+                                <% id.each do |numero| %>
+                                <li><%= link_to "Fã Clube", fanclub_path(numero.fanclub_id) %></li>
+                                <% end %>
+                              <li class="divider"></li>
+                              <% end %>
+                              <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Configurações
+                          <b class="caret"></b>
+                        </a>
+                        <ul>
+                            <li class="divider"></li>
+                            <li><%= link_to "Assinatura", edit_user_assinatura_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Altere sua foto", edit_user_foto_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Altere sua senha", edit_user_senha_path %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Altere seu perfil", edit_user_registration_path %></li>
+                        </ul>
+                        <li class="divider"></li>
+                        <% if current_user.canal %>
+                        <li><%= link_to "Deletar seu canal", current_user.user_channel, method: :delete, data: { confirm: 'Tem certeza? Operação sem retorno.' }  %> </li>
+                        <% else %>
+                        <li><%= link_to "Cadastre seu canal", new_user_channel_path %> </li>
+                        <% end %>
+                        <li class="divider"></li>
+                        <% if current_user.admin? %>
+                        <li class="dropdown-submenu dark-bg">
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Funções Administrador
+                                  <b class="caret"></b>
+                                </a>
+                        <ul class="dropdown">
+                            <li><%= link_to "Escolher carrossel", controla_02_path %></li>
+                                                        <li class="divider"></li>
+                            <li><%= link_to "Passar para agenciado", controla_01_path %></li>
+                                                        <li class="divider"></li>
+                             <li><%= link_to "Outras funções", controla_05_path %></li>
+                        </ul>
+                            </li>
+                        <li class="divider"></li>
+                        <% end %>
+                        <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
+                      </ul>
+  
+                      <% else %>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          CONTA
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dark-bg">
+                            <li><%= link_to "Entrar", new_user_session_path, method: :delete %></li>
+                          <li class="divider"></li>
+                            <li><%= link_to "Cadastrar-se", new_user_registration_path %></li>
+                          <li class="divider"></li>
+                            <li><%= link_to "Esqueci a senha", new_user_password_path %></li>
+                        </ul>
+                      <% end %>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    <div class="ajusta12">
+        <% if current_user %>
+            <a href=<%= user_path(current_user.id)  %>><%= image_tag current_user.avatar.url, height: '50', width: '70', class: 'poligono' %></a>
+        <% end %>
+    </div>
+    </nav>
+    <div class="linha"></div>
+    <div class="radio-container">
+      <div class="rd-content">
+        <% if @dados %>
+        <div class="rd-img">
+          <%= link_to programas_path do %>
+            <%= image_tag(@dados.foto, width: '60px', height: '50px', class: 'poligono') if @dados.foto%>
+          <% end %>
+          </li>
+        </div>
+        <div class="rd-text">
+          <%= @dados.locutor %> No ar:<br>
+          <%=  @dados.noar %>
+        </div>
+        <% end %>
+        <div class="rd-button">
+            <% if !current_user %>
+            <center>
+              <iframe class="target2" src="http://stm.voxpainel.com.br:8032/live" type="audio/mpeg" vol="0.6" noresize="noresize" scrolling="no" width="150px" marginwidth="0" height="50" marginheight="0" scrolling="No" frameborder="0" background-color="transparent" allowtransparency="true">
+              </iframe>
+            </center>
+            <div class="rd-play">
+              <%= image_tag("video-botao-play.png", width: 30, height: 30) %>
+            </div>
+            <div class="rd-vol">
+              <%= image_tag("testPause.png", width: 60, height: 15) %>
+            </div>
+            <% elsif  current_user.audio == false  %>
+            <div class="rd-play">
+              <%= link_to image_tag("speaker50.png", width: 30, height: 30), marca_path(current_user) %>
+            </div>
+            <center>
+              <iframe class="target2" src="http://stm.voxpainel.com.br:8032/live" type="audio/mpeg" vol="0.6" noresize="noresize" scrolling="no" width="150px" marginwidth="0" height="50" marginheight="0" scrolling="No" frameborder="0" background-color="transparent" allowtransparency="true">
+              </iframe>
+            </center>
+            <% else %>
+              <%= link_to image_tag("video-botao-play.png", width: 30, height: 30), desmarca_path(current_user) %>
+            <% end %>
+        </div>
+        <div class="linha"></div>
+      </div>
+      <div class="rd-opacity"></div>
+    </div>  
+
+    
