@@ -16,16 +16,17 @@
             <div class="col-md-4">
             <a href="IniciarCompra"><img src="DW.jpg" class="col-lg-offset-8" width="150 px"></a>
             </div>
-            <div class="col-md-4">
-               <a class="float-right" href="Form_Login.jsp">Área restrita</a>
-            </div>
             <% String usuario = ""+(String)session.getAttribute("NomeUsuarioLogado");%>
             <% if(usuario.contentEquals("admin")){ %>
             <div class="col-md-4">
-               <a class="float-right" href="SairLogin">Logout</a>
+               <a class="float-right" href="SairLogin">Logout | </a>
+               <a class="float-right" href="sucesso.jsp">Página Inicial do Administrador</a>
+            </div>
+            <% } else { %>
+            <div class="col-md-4">
+               <a class="float-right" href="Form_Login.jsp">Área restrita</a>
             </div>
             <% } %>
-            
  
         </div>
     </body>
